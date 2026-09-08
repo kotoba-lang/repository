@@ -1,3 +1,22 @@
+// SVELTEKIT-BACKEND-PRESERVED: moved out of svelte/ during the cljs migration; not wired.
+//
+// Extracted verbatim (logic unchanged) from
+//   svelte/src/routes/xrpc/[...path]/+server.ts
+// during the Svelte -> ClojureScript frontend migration (see ../cljs/).
+//
+// This is backend/XRPC code, not frontend markup — it is a server-side route
+// handler that proxies /xrpc/<nsid> calls to AGENTGATEWAY_MCP_ROUTER_URL as an
+// MCP `tools/call` JSON-RPC request. The migration's scope was the frontend
+// (the SvelteKit page under svelte/src/routes/+page.svelte, now
+// ../cljs/src/repository/app.cljs); backend TypeScript was to be left alone.
+// It happened to live inside the now-deleted svelte/ tree, so it is moved
+// here rather than deleted. It carries SvelteKit-specific imports
+// (`@sveltejs/kit`, `./$types`) that no longer resolve now that
+// `@sveltejs/kit` is not a dependency of this repo, so it is NOT currently
+// wired into `../src/app.ts` (the production XRPC dispatcher) or anywhere
+// else. Whether to revive this proxy route (and against what router) is an
+// open product decision, not made by this migration.
+
 import { json, type RequestEvent } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 
