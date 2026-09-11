@@ -55,7 +55,7 @@
           "APP_SOURCE" "APP_TEMPLATE" "APP_UI_TYPE" "APP_VERSION"
           "INTERFACES_REQUIRES"]
    :xrpc? true
-   :relative-path "appview/etzhayyim-wasm-repository-r3p0s1t0/cljs/src/repository/app.cljs"})
+   :relative-path "appview/etzhayyim-wasm-repository-r3p0s1t0/cljs/src/repository/app.cljk"})
 
 (rf/reg-event-db
  :initialize-db
